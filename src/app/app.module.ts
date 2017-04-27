@@ -17,6 +17,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' },
@@ -48,7 +49,7 @@ const appRoutes: Routes = [
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ServersService, AuthService, AuthGuard],
+  providers: [ServersService, AuthService, AuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
